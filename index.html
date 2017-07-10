@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易教育产品部</title>
+	<!-- 引入normalize.css，统一浏览器的默认样式 -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+	<!-- 为保证IE8的兼容性，不使用HTML5标签 -->
+
+	<!-- 顶部通知条 -->
+	<div class="top-notify">
+		<div class="container clearfix">
+			<p>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href="#">立即查看></a></p>
+			<p><a class="icon" href="javascript:;" id="notify-close">Close</a>不再提醒</p>
+		</div>
+	</div>
+	<!-- END 顶部通知条 -->
+
+	<!-- 页面头部 -->
+	<div class="g-header">
+		<div class="container clearfix">
+			<div class="pull-left">
+				<h1 class="logo"><a href="#">网易教育产品部</a></h1>
+				<button id="follow-btn" class="follow-btn" data-target="login-modal"><i class="icon icon-plus"></i>关注</button>
+				<span class="fans">粉丝<em>45</em></span>
+			</div>
+			<div class="pull-right">
+				<ul class="link">
+					<li><a href="http://open.163.com" target="_blank">网易公开课</a></li>         
+					<li><a href="http://study.163.com" target="_blank">云课堂</a></li>    
+					<li><a href="http://www.icourse163.org" target="_blank">中国大学MOOC</a></li>
+				</ul>
+				<form class="search-form">
+					<button class="search-btn icon">Search</button>
+				</form>
+			</div>			
+		</div>
+	</div>
+	<!-- END 页面头部 -->
+	
+	<!-- 页面主体 -->
+	<div class="g-main">
+		<!-- 页面Banner -->
+		<div class="m-swiper">
+			<div class="slides">
+				<div class="slide active">
+					<img src="images/banner1.jpg" alt="知识改变世界">
+				</div>
+				<div class="slide">
+					<img src="images/banner2.jpg" alt="知识改变世界">
+				</div>
+				<div class="slide">
+					<img src="images/banner3.jpg" alt="知识改变世界">
+				</div>
+			</div>
+			<div class="pagination">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- END 页面Banner -->
+
+		<!-- 产品介绍 -->
+		<div class="m-about">
+			<div class="container clearfix">
+				<div class="box">
+					<div class="img-outter">
+						<div class="img-inner">
+							<i class="icon icon-video"></i>
+						</div>						
+					</div>
+					<div class="box-info">
+						<h2>网易公开课</h2>
+						<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
+						<a href="http://open.163.com" target="_blank">了解更多 ></a>
+					</div>
+				</div>
+				<div class="box">
+					<div class="img-outter">
+						<div class="img-inner">
+							<i class="icon icon-book"></i>
+						</div>						
+					</div>
+					<div class="box-info">
+						<h2>云课堂</h2>
+						<p>网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。</p>
+						<a href="http://study.163.com" target="_blank">了解更多 ></a>
+					</div>
+				</div>
+				<div class="box">
+					<div class="img-outter">
+						<div class="img-inner">
+							<i class="icon icon-mooc"></i>
+						</div>						
+					</div>
+					<div class="box-info">
+						<h2>中国大学MOOC</h2>
+						<p>是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
+						<a href="http://www.icourse163.org" target="_blank">了解更多 ></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END 产品介绍 -->
+
+		<!-- 图片展示 -->
+		<div class="m-pic">
+			<ul class="pic-list">
+				<li><img src="images/pic1.jpg" alt="#"></li>
+				<li><img src="images/pic2.jpg" alt="#"></li>
+				<li><img src="images/pic3.jpg" alt="#"></li>
+				<li><img src="images/pic4.jpg" alt="#"></li>
+				<li><img src="images/pic5.jpg" alt="#"></li>
+			</ul>
+		</div>
+		<!-- END 图片展示 -->
+
+		<!-- 课程模块 -->
+		<div class="m-course">
+			<div class="container clearfix">
+				<div class="course-con">
+					<ul class="course-tab clearfix">
+						<li class="active"><a href="javascript:;">产品设计</a></li>
+						<li><a href="javascript:;">编程语言</a></li>
+					</ul>
+					<div class="course-body clearfix">
+						<ul class="course-list clearfix">
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+							<li>
+								<div class="box-shadow">
+									<div class="course-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="course-info">
+										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
+										<p>音频帮</p>
+										<p>
+											<span><i class="icon icon-person"></i>21222</span>
+										</p>
+										<p class="course-price">800.00</p>
+									</div>								
+								</div>
+							</li>
+						</ul>						
+					</div>
+					<ul class="course-pagination">
+						<li class="prev"><i class="icon icon-prev"></i></li>
+						<li class="active"><a href="javascript:;">1</a></li>
+						<li><a href="javascript:;">2</a></li>
+						<li><a href="javascript:;">3</a></li>
+						<li class="next"><i class="icon icon-next"></i></li>
+					</ul>
+				</div>
+				<div class="course-right">
+					<!-- 机构介绍 -->
+					<div class="panel">
+						<div class="panel-title">
+							<h3>机构介绍</h3>
+						</div>
+						<div class="panel-content org-info">
+							<h4>观看下面的视频来了解吧：</h4>
+							<div class="poster-outter">
+								<a class="poster-inner" href="javascript:;" id="vmodal-btn" data-target="video-modal">
+									<i class="icon icon-play"></i>
+								</a>								
+							</div>
+						</div>
+					</div>
+					<!-- END 机构介绍 -->
+
+					<!-- 最热排行 -->
+					<div class="panel">
+						<div class="panel-title">
+							<h3>最热排行</h3>
+						</div>
+						<div class="panel-content">
+							<ul class="hot-list">
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="hot-img">
+										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
+									</div>
+									<div class="hot-info">
+										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
+										<p><i class="icon icon-person"></i>21222</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- END 最热排行 -->
+				</div>				
+			</div>
+		</div>
+		<!-- END 课程模块 -->
+	</div>
+	<!-- END 页面主体 -->
+
+	<!-- 页面底部 -->
+	<div class="g-footer">
+		<div class="container clearfix">
+			<div class="copyright pull-left">
+				<h1 class="logo"><a href="#">网易教育产品部</a></h1>
+				<p>&copy;2017 icourse163.org 浙ICP备08114786号-1</p>
+				<p>icourses.cn 京ICP备12020869号-2 京公网安备110102000459-2</p>
+			</div>
+			<ul class="link-list">
+				<li class="list-title">友情链接：</li>
+				<li><a href="http://open.163.com" target="_blank">网易公开课</a></li>         
+				<li><a href="http://study.163.com" target="_blank">云课堂</a></li>    
+				<li><a href="http://www.icourse163.org" target="_blank">中国大学MOOC</a></li>				
+			</ul>
+			<ul class="link-list">
+				<li class="list-title">我们:</li>
+				<li><a href="#">关于</a></li>         
+				<li><a href="#">联系</a></li>    
+				<li><a href="#">关注</a><i class="icon icon-sina"></i></li>				
+			</ul>
+			<ul class="link-list">
+				<li class="list-title">更多:</li>
+				<li><a href="#">常见问题</a></li>         
+				<li><a href="#">意见反馈</a></li>    			
+			</ul>
+		</div>
+	</div>
+	<!-- END 页面底部 -->
+
+	<!-- 机构介绍视频模态框 -->
+	<div class="modal video-modal" id="video-modal">
+		<div class="modal-container">
+			<button class="icon modal-close">Close</button>
+			<div class="modal-content">
+				<h3 class="modal-title">请观看下面的视频</h3>
+				<video src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" controls="controls">
+					您的浏览器不支持 video 标签。
+				</video>
+			</div>
+		</div>
+	</div>
+	<!-- END 机构介绍视频模态框 -->
+
+	<!-- 登录模态框 -->
+	<div class="modal login-modal" id="login-modal">
+		<div class="modal-container">
+			<button class="icon modal-close">Close</button>
+			<div class="modal-content">
+				<h3 class="modal-title">登录网易云课堂</h3>
+				<form class="login-form">
+					<div class="form-group">
+						<input type="text" name="userName" placeholder="帐号" id="userName">
+					</div>
+					<div class="form-group">
+						<input type="password" name="password" placeholder="密码" id="password">
+					</div>
+					<div class="form-group">
+						<button class="login-btn" id="login-btn">登录</button>
+					</div>
+					<div id="login-error" class="login-error"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- END 登录模态框 -->
+</body>
+	<script type="text/javascript" src="js/md5.min.js"></script> 
+	<script type="text/javascript" src="js/unit.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</html>

@@ -1,0 +1,327 @@
+/*页面Banner*/
+.m-swiper{
+	width: 100%;
+	position: relative;
+}
+.m-swiper .slides .slide{
+	width: 100%;
+	display: none;
+	opacity: 0;
+}
+.m-swiper .slides .slide img{
+	width: 100%;
+}
+.m-swiper .slides .active{
+	display: block;
+	opacity: 1;
+}
+.m-swiper .pagination{
+	position: absolute;
+	left: 0;
+	bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+.m-swiper .pagination span{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	background: #fff;
+	border-radius: 100%;
+	cursor: pointer;
+}
+.m-swiper .pagination .active{
+	background: #333;
+}
+
+/*产品介绍*/
+.m-about{
+	padding: 55px 0;
+}
+.m-about .box{
+	width: 33.3333333%;
+	float: left;
+}
+.m-about .box .img-outter{
+	width: 80px;
+	float: left;
+	padding-top: 10px;
+}
+.m-about .box .img-inner{
+	width: 80px;
+	height: 80px;
+	background: #39a030;
+	border-radius: 100%;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+.m-about .box .img-inner .icon-video{
+	width: 38px;
+	height: 37px;
+	background-position: 0px 0px;
+}
+.m-about .box .img-inner .icon-video{
+	width: 38px;
+	height: 37px;
+	background-position: 0px 0px;
+}
+.m-about .box .img-inner .icon-book{
+	width: 38px;
+	height: 40px;
+	background-position: -42px 0px;
+}
+.m-about .box .img-inner .icon-mooc{
+	width: 48px;
+	height: 39px;
+	background-position: -84px 0px;
+}
+.m-about .box .box-info{
+	display: table-cell;
+	padding-left: 20px;
+	padding-right: 60px;
+}
+.m-about .box .box-info h2{
+	font-size: 22px;
+	color: #333;
+	font-weight: normal;
+}
+.m-about .box .box-info p{
+	color: #666;
+	line-height: 24px;
+	margin: 15px 0;
+	text-align: justify;
+}
+.m-about .box .box-info a{
+	color: #39a030;
+	text-decoration: none;
+}
+.m-about .box .box-info a:hover{
+	text-decoration: underline;
+}
+
+/*图片展示*/
+.m-pic{
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+.m-pic .pic-list{
+	width: 100%;
+	display: inline-block;
+	margin-left: -2px;
+	margin-right: -2px;
+}
+.m-pic .pic-list li{
+	float: left;
+	width: 20%;
+	padding: 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.m-pic .pic-list li img{
+	width: 100%;
+}
+
+/*课程模块*/
+.m-course{
+	padding: 85px 0;
+	background: #f8f8f8;
+}
+.m-course h5{
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.m-course h5 a{
+	font-size: 14px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+}
+.m-course h5 a:hover{
+	color: #21a557;
+}
+.m-course p{
+	color: #999;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+/*课程模块 - 左侧*/
+.m-course .course-con{
+	float: left;
+	width: 960px;
+}
+.m-course .course-tab{
+	margin-bottom: 20px;
+}
+.m-course .course-tab li{
+	float: left;
+	box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+	border: 1px solid #ecebeb\9;
+}
+.m-course .course-tab .active{
+	background: #39a030;
+}
+.m-course .course-tab .active a{
+	color: #fff;
+}
+.m-course .course-tab li a{
+	display: block;
+	padding: 10px 60px;
+	font-size: 20px;
+	color: #666;
+	text-decoration: none;
+}
+.m-course .course-body{
+	margin-bottom: 20px;
+}
+.m-course .course-list{
+	width: 100%;
+	margin-right: -10px;
+	margin-left: -10px;
+}
+.m-course .course-list .box-shadow{
+	box-shadow: 0px 1px 1px rgba(0,0,0,.2);
+	border: 1px solid #ecebeb\9;
+}
+.m-course .course-list li{
+	width: 25%;
+	box-sizing: border-box;
+	padding: 10px;
+	float: left;
+
+}
+.m-course .course-img{
+	width: 100%;
+	height: 124px;
+}
+.m-course .course-img img{
+	width: 100%;
+}
+.m-course .course-info{
+	padding: 10px 5px;
+}
+.m-course .course-info h4{
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.m-course .course-info .course-price:before{
+	content: '￥';
+}
+.m-course .course-info .course-price{
+	color: #ff3f00;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.m-course .course-pagination{
+	float: right;
+	margin-right: 15px;
+}
+.m-course .course-pagination li{
+	float: left;
+	margin: 0 5px;
+}
+.m-course .course-pagination .active a{
+	background: #9dd8b1;
+	color: #fff;
+}
+.m-course .course-pagination .active a:hover{
+	color: #fff;
+}
+.m-course .course-pagination li a{
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: #666;
+	border-radius: 1px;
+}
+.m-course .course-pagination li a:hover{
+	color: #39a030;
+}
+.m-course .course-pagination .prev,.m-course .course-pagination .next{
+	width: 30px;
+	height: 20px;
+	background: #9dd8b1;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 1px;
+}
+.m-course .course-pagination .prev .icon-prev{
+	width: 8px;
+	height: 12px;
+	background-position: -111px -50px;
+}
+.m-course .course-pagination .next .icon-next{
+	width: 8px;
+	height: 12px;
+	background-position: -127px -50px;
+}
+/*课程模块 - 右侧*/
+.m-course .course-right{
+	width: 225px;
+	float: right;
+}
+.m-course .course-right .org-info h4{
+	color: #666;
+	font-size: 14px;
+	font-weight: normal;
+}
+.m-course .course-right .poster-outter{
+	margin: 10px 0;
+}
+.m-course .course-right .poster-inner{
+	width: 180px;
+	height: 110px;
+	background: url('../images/video.jpg') no-repeat;
+	background-size: cover;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+.m-course .course-right .poster-inner .icon-play{
+	width: 46px;
+	height: 46px;
+	background-position: -136px 0;
+}
+.m-course .hot-list li{
+	margin-bottom: 20px;
+}
+.m-course .hot-img{
+	float: left;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+.m-course .hot-img img{
+	height: 100%;
+}
+.m-course .hot-info{
+	width: 125px;
+	float: left;
+	margin-left: 10px;
+}
+
+.m-course .icon-person{
+	width: 9px;
+	height: 9px;
+	background-position: -93px -50px;
+	margin-right: 5px;
+}
+
+
+/*视频模态框*/
+.video-modal video{
+	width: 890px;
+}
