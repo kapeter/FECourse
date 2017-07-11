@@ -1,0 +1,26 @@
+{
+  "name": "fe-course",
+  "version": "1.0.0",
+  "description": "前端微专业大作业DEMO",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapeter/FECourse.git"
+  },
+  "author": "kapeter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapeter/FECourse/issues"
+  },
+  "homepage": "https://github.com/kapeter/FECourse#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1"
+  }
+}

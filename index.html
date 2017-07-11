@@ -51,22 +51,22 @@
 	<!-- 页面主体 -->
 	<div class="g-main">
 		<!-- 页面Banner -->
-		<div class="m-swiper">
+		<div class="m-swiper" id="swiper">
 			<div class="slides">
-				<div class="slide active">
-					<img src="images/banner1.jpg" alt="知识改变世界">
+				<div class="slide active" style="background-image: url('images/banner1.jpg');">
+					<a href="http://open.163.com" target="_blank">知识改变世界</a>
 				</div>
-				<div class="slide">
-					<img src="images/banner2.jpg" alt="知识改变世界">
+				<div class="slide" style="background-image: url('images/banner2.jpg');">
+					<a href="http://study.163.com" target="_blank">知识改变世界</a>
 				</div>
-				<div class="slide">
-					<img src="images/banner3.jpg" alt="知识改变世界">
+				<div class="slide" style="background-image: url('images/banner3.jpg');">
+					<a href="http://www.icourse163.org" target="_blank">知识改变世界</a>
 				</div>
 			</div>
-			<div class="pagination">
-				<span class="active"></span>
-				<span></span>
-				<span></span>
+			<div class="pagination" id="swiper-pagination">
+				<span class="active" data-index="0"></span>
+				<span data-index="1"></span>
+				<span data-index="2"></span>
 			</div>
 		</div>
 		<!-- END 页面Banner -->
@@ -136,10 +136,10 @@
 					</ul>
 					<div class="course-body clearfix" id="course-body">
 						<div class="active" id="design-box"></div>
-						<div id="program-box"></div>					
+						<div id="program-box"></div>
+						<div class="course-detail" id="course-detail"></div>					
 					</div>
-					<ul class="course-pagination" id="course-pagination">
-					</ul>
+					<ul class="course-pagination" id="course-pagination"></ul>
 				</div>
 				<div class="course-right">
 					<!-- 机构介绍 -->

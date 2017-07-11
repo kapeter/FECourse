@@ -1,9 +1,17 @@
 var catType     = 10; // 筛选类型（10：产品设计；20：编程语言）
-var pSize       = 16; // 每页返回数据个数
+var pSize       = 12; // 每页返回数据个数
 var designNo    = 1;  // 产品设计当前页码
 var proNo       = 1;  // 编程语言当前页码
 var designPage  = 1;  // 产品设计页数
 var proPage     = 1;  // 产品设计页数
+
+//轮播图
+var swiperTimer = null; //轮播图控制器
+var swiper = document.getElementById('swiper');
+var slides = swiper.querySelector('.slides');
+var sList = slides.querySelectorAll('.slide');
+var pagination = swiper.querySelector('#swiper-pagination');
+var bullets = pagination.querySelectorAll('span');
 
 //页面载入函数
 function pageLoad() {
@@ -22,6 +30,9 @@ function pageLoad() {
 	}else{
 		document.querySelector('.top-notify').style.display = 'block';
 	}
+
+	// 设置轮播图
+	swiperTimer = setTimeout('setSwiper()',5000);
 
 	//加载最热排行数据
 	Unit.ajax({
@@ -125,6 +136,7 @@ function eventListener() {
 	Unit.addEvent(courseTab,'click',function(event){
 		var e = window.event || event;
 		var element = event.target;
+		detailHide();
 		var liArr = courseTab.getElementsByTagName('li');
 		for (var i = 0; i < liArr.length; i++){
 			liArr[i].className = '';
@@ -151,8 +163,14 @@ function eventListener() {
 	var coursePage = document.getElementById('course-pagination');
 	Unit.addEvent(coursePage,'click',function(event){
 		var e = window.event || event;
-		var element = event.target;
+		var element = e.target;
+		//将翻页按钮的图标的点击事件冒泡到li上
+		if (element.className.indexOf("icon") > -1){
+			element = element.parentNode;
+		}
+		detailHide();
 		switch (element.className){
+			// 数字键
 			case 'page-num':
 				if (element.parentNode.className == 'active'){
 					return false;
@@ -160,8 +178,47 @@ function eventListener() {
 					changePage(parseInt(element.innerText));
 				}
 				break;
+			// 往前翻
+			case 'prev':
+				var pageNo = catType == 10 ? designNo : proNo;
+				pageNo--;
+				changePage(pageNo);
+				break;
+			// 往后翻
+			case 'next':
+				var pageNo = catType == 10 ? designNo : proNo;
+				pageNo++;
+				changePage(pageNo);
+				break;
+
 		}
 	});	
+
+	//轮播图鼠标事件
+	Unit.addEvent(swiper,'mouseover',function(){
+		clearTimeout(swiperTimer);
+	});
+	Unit.addEvent(swiper,'mouseout',function(){
+		swiperTimer = setTimeout('setSwiper()',5000);
+	});
+
+	//轮播图分页器
+
+	Unit.addEvent(pagination,'click',function(event){
+		var e = window.event || event;
+		var element = event.target;
+		var eIndex = parseInt(element.dataset.index);
+		var sIndex = 0;
+		for (var i = sList.length - 1; i >= 0; i--){
+			if (sList[i].className.indexOf('active') > -1){
+				sIndex = i;
+				break;
+			}
+		}
+		fade(sIndex,eIndex);
+		bullets[sIndex].className = '';
+		bullets[eIndex].className = 'active';
+	});
 }
 
 
@@ -210,6 +267,45 @@ function cancelFollow(){
 	Unit.setCookie('followSuc',0);
 	document.getElementById('follow-btn').style.display = 'inline';
 	document.querySelector('.follow-cancel').style.display = 'none';
+}
+
+//轮播图
+function setSwiper() {
+	var sIndex,eIndex;
+	for (var i = sList.length - 1; i >= 0; i--){
+		if (sList[i].className.indexOf('active') > -1){
+			if (i != sList.length - 1){
+				eIndex = i + 1;
+			}else{
+				eIndex = 0;
+			}
+			sIndex = i;
+			fade(sIndex,eIndex);
+			bullets[sIndex].className = '';
+			bullets[eIndex].className = 'active';
+			break;
+		}
+	}
+	setTimeout('setSwiper()',5000);
+}
+
+//切换效果
+function fade(sIndex,eIndex){
+	var sOpa = 100;
+	var eOpa = 0;
+	
+	var timer = setInterval(function(){
+		if (eOpa == 100){
+			clearInterval(timer);
+			sList[sIndex].className = 'slide';
+			sList[eIndex].className = 'slide active';
+			return false;
+		}
+		sOpa -= 5;
+		sList[sIndex].style.opacity = sOpa / 100;
+		eOpa += 5;
+		sList[eIndex].style.opacity = eOpa / 100;
+	},25);	
 }
 
 //最热排行循环滚动
@@ -272,10 +368,30 @@ function getCourse(){
 				  				+ '<p><span><i class="icon icon-person"></i>'+ data[i].learnerCount +'</span></p>'
 				  				+ '<p class="course-price">' + (data[i].price == 0 ? '免费' : '￥'+ data[i].price) +'</p>'
 				  				+ '</div></div>';
-				
-				listObj.appendChild(lDom);			
+				lDom.dataset.name = data[i].name;
+				lDom.dataset.learnerCount = data[i].learnerCount;
+				lDom.dataset.description = data[i].description;
+				lDom.dataset.provider = data[i].provider;
+				lDom.dataset.targetUser = data[i].targetUser;
+				lDom.dataset.price = data[i].price;
+				lDom.dataset.bigPhotoUrl = data[i].bigPhotoUrl;
+				listObj.appendChild(lDom);	
 			}
 			cBox.appendChild(listObj);
+
+			listObj = document.getElementById(prefix + '-page-' + pageNo);
+			Unit.addEvent(listObj,'mouseover',function(event){
+				var e = window.event || event;
+				var element = e.target;
+				while (element.tagName != 'LI'){
+					element = element.parentNode;
+				}
+				detailShow(element);
+			});		
+			// Unit.addEvent(listObj,'mouseout',function(){
+			// 	console.log('da');
+			// 	detailHide();
+			// });			
 
 			//设置分页
 			setPagination();
@@ -304,10 +420,21 @@ function setPagination() {
 // 改变页码
 function changePage(pageNo) {
 	var prefix = catType == 10 ? 'design' : 'program';
+	if (pageNo < 1){
+		return false;
+	}
 	if (catType == 10){
-		designNo = pageNo;
+		if (pageNo > designPage){
+			return false;
+		}else{
+			designNo = pageNo;
+		}
 	}else{
-		proNo = pageNo;
+		if (pageNo > proPage){
+			return false;
+		}else{
+			proNo = pageNo;
+		}
 	}
 	var cBox = document.getElementById(prefix + '-box');
 	var listObj = cBox.querySelectorAll('.course-list');
@@ -317,7 +444,37 @@ function changePage(pageNo) {
 	if (!document.getElementById(prefix + '-page-' + pageNo)){
 		getCourse();
 	}else{
-		listObj[pageNo].className = 'course-list active clearfix';
+		document.getElementById(prefix + '-page-' + pageNo).className = 'course-list active clearfix';
 		setPagination();
 	}
 }
+
+//展示课程详情
+function detailShow(element){
+	var detailObj = document.getElementById('course-detail');
+	detailObj.innerHTML = '';
+	var divDom = document.createElement('div');
+	divDom.className = 'detail-content clearfix';
+	divDom.innerHTML = '<img src="'+ element.dataset.bigPhotoUrl +'">'
+						+ '<div class="detail-info">'
+						+ '<h3>'+ element.dataset.name +'</h3>'
+						+ '<p><i class="icon icon-person"></i>'+ element.dataset.learnerCount +'人在学</p>'
+						+ '<p>发布者：'+ element.dataset.provider +'</p>'
+						+ '<p>目标人群：'+ element.dataset.targetUser +'</p>'
+						+ '</div>';
+	detailObj.appendChild(divDom);
+	
+	divDom = document.createElement('div');
+	divDom.className = 'detail-footer';
+	divDom.innerHTML = '<p>'+ element.dataset.description +'</p>';
+	detailObj.appendChild(divDom);
+	detailObj.style.left = element.offsetLeft + 'px';
+	detailObj.style.top = element.offsetTop + 'px';
+	detailObj.style.display = 'block';
+}
+
+function detailHide(){
+	var detailObj = document.getElementById('course-detail');
+	detailObj.style.display = 'none';
+}
+
