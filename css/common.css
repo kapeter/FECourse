@@ -62,12 +62,19 @@ ul,ol,li{
 	line-height: 8px;
 }
 .top-notify p:last-child a{
+	color: #333;
+	text-decoration: none;
+}
+.top-notify p:last-child a:hover{
+	color: #21a557;
+	text-decoration: underline;
+}
+.top-notify .icon-close{
 	width: 10px;
 	height: 10px;
 	margin-right: 5px;
 	margin-top: 13px;
-	background-position: 0px -50px;
-	text-indent: -9999px;
+	background-position: 0px -50px;	
 }
 
 /*页面头部*/
@@ -105,6 +112,34 @@ ul,ol,li{
 }
 .g-header .follow-btn:hover{
 	background: #2fb556;
+}
+.g-header .follow-cancel{
+	display: none;
+	margin: 0px 20px 0px 30px;
+	border: 1px solid #eee;
+	padding: 4px 6px;
+	line-height: 1;
+	color: #333;
+}
+.g-header .follow-cancel .icon-tick{
+	width: 11px;
+	height: 9px;
+	background-position: -27px -50px;
+	margin-right: 4px;
+}
+.g-header .follow-cancel span{
+	display: inline-block;
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid #ccc;
+}
+.g-header .follow-cancel span a{
+	color: #999999;
+	text-decoration: none;
+}
+.g-header .follow-cancel span a:hover{
+	color: #21a557;
+	text-decoration: underline;
 }
 .g-header .fans{
 	color: #666;

@@ -44,7 +44,6 @@ var Unit = (function () {
         	console.error(status);
         };
         var params = formatParams(options.data);
-        console.log(params);
         var xhr = null;
 
         if (window.XMLHttpRequest) {
@@ -86,7 +85,7 @@ var Unit = (function () {
 		var startOfCookie = myCookie.indexOf(searchKey);
 		var endOfCookie, result;
 		if(startOfCookie != -1){
-			startOfcookie += searchKey.length;
+			startOfCookie += searchKey.length;
 			endOfCookie = myCookie.indexOf(";",startOfCookie);
 			result = myCookie.substring(startOfCookie,endOfCookie);
 		}

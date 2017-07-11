@@ -16,7 +16,7 @@
 	<div class="top-notify">
 		<div class="container clearfix">
 			<p>网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！<a href="#">立即查看></a></p>
-			<p><a class="icon" href="javascript:;" id="notify-close">Close</a>不再提醒</p>
+			<p><a href="javascript:;" id="notify-close"><i class="icon icon-close"></i>不再提醒</a></p>
 		</div>
 	</div>
 	<!-- END 顶部通知条 -->
@@ -27,6 +27,11 @@
 			<div class="pull-left">
 				<h1 class="logo"><a href="#">网易教育产品部</a></h1>
 				<button id="follow-btn" class="follow-btn" data-target="login-modal"><i class="icon icon-plus"></i>关注</button>
+				<!-- 已关注 -->
+				<p class="follow-cancel">
+					<i class="icon icon-tick"></i>已关注
+					<span><a href="javascript:;" id="follow-cancel">取消</a></span>
+				</p>
 				<span class="fans">粉丝<em>45</em></span>
 			</div>
 			<div class="pull-right">
@@ -125,260 +130,15 @@
 		<div class="m-course">
 			<div class="container clearfix">
 				<div class="course-con">
-					<ul class="course-tab clearfix">
-						<li class="active"><a href="javascript:;">产品设计</a></li>
-						<li><a href="javascript:;">编程语言</a></li>
+					<ul class="course-tab clearfix" id="course-tab">
+						<li class="active" data-cat="design"><a href="javascript:;">产品设计</a></li>
+						<li data-cat="program"><a href="javascript:;">编程语言</a></li>
 					</ul>
-					<div class="course-body clearfix">
-						<ul class="course-list clearfix">
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-							<li>
-								<div class="box-shadow">
-									<div class="course-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="course-info">
-										<h5><a href="#">混音全揭秘 舞曲实战篇 揭秘音乐揭秘...</a></h5>
-										<p>音频帮</p>
-										<p>
-											<span><i class="icon icon-person"></i>21222</span>
-										</p>
-										<p class="course-price">800.00</p>
-									</div>								
-								</div>
-							</li>
-						</ul>						
+					<div class="course-body clearfix" id="course-body">
+						<div class="active" id="design-box"></div>
+						<div id="program-box"></div>					
 					</div>
-					<ul class="course-pagination">
-						<li class="prev"><i class="icon icon-prev"></i></li>
-						<li class="active"><a href="javascript:;">1</a></li>
-						<li><a href="javascript:;">2</a></li>
-						<li><a href="javascript:;">3</a></li>
-						<li class="next"><i class="icon icon-next"></i></li>
+					<ul class="course-pagination" id="course-pagination">
 					</ul>
 				</div>
 				<div class="course-right">
@@ -403,81 +163,9 @@
 						<div class="panel-title">
 							<h3>最热排行</h3>
 						</div>
-						<div class="panel-content">
-							<ul class="hot-list">
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-								<li class="clearfix">
-									<div class="hot-img">
-										<img src="images/course.jpg" alt="舞曲揭秘音乐揭秘">
-									</div>
-									<div class="hot-info">
-										<h5><a href="#">舞曲揭秘音乐揭秘舞曲揭秘音乐揭秘</a></h5>
-										<p><i class="icon icon-person"></i>21222</p>
-									</div>
-								</li>
-							</ul>
+						<div class="panel-content hot-content">
+							<ul class="hot-list" id="hot-list"></ul>
+							<ul class="hot-list" id="hot-list-reset"></ul>
 						</div>
 					</div>
 					<!-- END 最热排行 -->
@@ -557,4 +245,12 @@
 	<script type="text/javascript" src="js/md5.min.js"></script> 
 	<script type="text/javascript" src="js/unit.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			//页面载入
+			pageLoad();
+			//事件注册
+			eventListener();
+		}
+	</script>
 </html>
