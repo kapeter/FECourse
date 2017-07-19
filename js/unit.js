@@ -1,7 +1,7 @@
 /**
  * 系统功能函数
  *
- * 包括：addEvent(事件监听处理)，ajax(ajax处理函数), getCookie(获取cookie值), setCookie(设置cookie值)
+ * 包括：addEvent(事件监听处理)，ajax(ajax处理函数), getCookie(获取cookie值), setCookie(设置cookie值), getData(获取data-*的值), setData(获取data-*的值)
  * 
  */
 
@@ -20,7 +20,9 @@ var Unit = (function () {
 		if(element.addEventListener){
 			element.addEventListener(type, callback, useCapture);
 		} else if(element.attachEvent){
-			element.attachEvent('on' + type, callback);
+			element.attachEvent("on" + type, function(event){
+                callback.call(element, event);
+            });
 		} else {
            element['on' + type] = callback;
         }
@@ -105,7 +107,46 @@ var Unit = (function () {
 		document.cookie = key + "=" + escape(value) + ((expire==null) ? "" : ";expires="+exdate.toGMTString());
 	}	
 
+	/**
+	 * 获取data-*的值
+	 * 
+	 * @param {string}  el   元素对象
+	 * @param {string}  key   key值
+	 * 
+	 */	
+	var getData = function (el, key) {
+		if (el){
+			if (el.dataset){
+				return el.dataset[key];
+			}else{
+				return el.getAttribute('data-' + key);
+			}			
+		}
+	}
 
+	/**
+	 * 设置data-*的值
+	 * 
+	 * @param {string}  el   元素对象
+	 * @param {string}  obj  数据键值对
+	 * 
+	 */	
+	var setData = function (el, obj) {
+		for ( var x in obj){
+			if (el.dataset){
+				el.dataset[x] = obj[x];
+			}else{
+				el['data-' + x] = obj[x];
+			}		
+		}
+
+	}
+
+
+	/**
+	 * 表单数据序列化
+	 * 
+	 */	
     var formatParams = function (data) {
         var arr = [];
         for (var name in data) {
@@ -119,7 +160,9 @@ var Unit = (function () {
 		addEvent  : addEvent,
 		ajax      : ajax,
 		getCookie : getCookie,
-		setCookie : setCookie, 
+		setCookie : setCookie,
+		getData   : getData,
+		setData   : setData 
 	}
 
 })();

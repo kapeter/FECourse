@@ -57,15 +57,15 @@ ul,ol,li{
 .top-notify p:first-child a:hover{
 	text-decoration: underline;
 }
-.top-notify p:last-child{
+.top-notify p+p{
 	float: right;
 	line-height: 8px;
 }
-.top-notify p:last-child a{
+.top-notify p+p a{
 	color: #333;
 	text-decoration: none;
 }
-.top-notify p:last-child a:hover{
+.top-notify p+p a:hover{
 	color: #21a557;
 	text-decoration: underline;
 }

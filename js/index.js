@@ -135,14 +135,15 @@ function eventListener() {
 	var courseBody = document.getElementById('course-body');
 	Unit.addEvent(courseTab,'click',function(event){
 		var e = window.event || event;
-		var element = event.target;
+		var element = e.srcElement ? e.srcElement : e.target;
 		detailHide();
 		var liArr = courseTab.getElementsByTagName('li');
 		for (var i = 0; i < liArr.length; i++){
 			liArr[i].className = '';
 		}
+
 		element.parentNode.className = 'active';
-		var prefix = element.parentNode.dataset.cat;
+		var prefix = Unit.getData(element.parentNode,'cat');
 		var divArr = courseBody.children;
 		for (var i = 0; i < liArr.length; i++){
 			divArr[i].className = '';
@@ -163,7 +164,7 @@ function eventListener() {
 	var coursePage = document.getElementById('course-pagination');
 	Unit.addEvent(coursePage,'click',function(event){
 		var e = window.event || event;
-		var element = e.target;
+		var element = e.srcElement ? e.srcElement : e.target;
 		//将翻页按钮的图标的点击事件冒泡到li上
 		if (element.className.indexOf("icon") > -1){
 			element = element.parentNode;
@@ -206,8 +207,8 @@ function eventListener() {
 
 	Unit.addEvent(pagination,'click',function(event){
 		var e = window.event || event;
-		var element = event.target;
-		var eIndex = parseInt(element.dataset.index);
+		var element = e.srcElement ? e.srcElement : e.target;
+		var eIndex = parseInt(Unit.getData(element,'index'));
 		var sIndex = 0;
 		for (var i = sList.length - 1; i >= 0; i--){
 			if (sList[i].className.indexOf('active') > -1){
@@ -224,15 +225,13 @@ function eventListener() {
 
 //打开模态框
 function openModal(element){
-	if (element.dataset){
-		var elName = element.dataset.target;
-		if (document.getElementById(elName)){
-			var thisModal = document.getElementById(elName);
-			thisModal.style.display = 'block';
-			var modalBox = thisModal.querySelector('.modal-container');
-			var top = (document.documentElement.clientHeight - modalBox.offsetHeight) / 2;
-			modalBox.style.marginTop = top + 'px';
-		}
+	var elName =  Unit.getData(element,'target');
+	if (document.getElementById(elName)){
+		var thisModal = document.getElementById(elName);
+		thisModal.style.display = 'block';
+		var modalBox = thisModal.querySelector('.modal-container');
+		var top = (document.documentElement.clientHeight - modalBox.offsetHeight) / 2;
+		modalBox.style.marginTop = top + 'px';
 	}
 }
 
@@ -358,6 +357,8 @@ function getCourse(){
 			listObj.className = 'course-list active clearfix';
 			listObj.id = prefix + '-page-' + pageNo;
 
+			cBox.appendChild(listObj);
+
 			for(var i = 0; i < data.length; i++){
 				var lDom = document.createElement('li');
 				lDom.innerHTML = '<div class="box-shadow">'
@@ -368,31 +369,32 @@ function getCourse(){
 				  				+ '<p><span><i class="icon icon-person"></i>'+ data[i].learnerCount +'</span></p>'
 				  				+ '<p class="course-price">' + (data[i].price == 0 ? '免费' : '￥'+ data[i].price) +'</p>'
 				  				+ '</div></div>';
-				lDom.dataset.name = data[i].name;
-				lDom.dataset.learnerCount = data[i].learnerCount;
-				lDom.dataset.description = data[i].description;
-				lDom.dataset.provider = data[i].provider;
-				lDom.dataset.targetUser = data[i].targetUser;
-				lDom.dataset.price = data[i].price;
-				lDom.dataset.bigPhotoUrl = data[i].bigPhotoUrl;
-				listObj.appendChild(lDom);	
+
+				listObj.appendChild(lDom);
+
+				Unit.setData(lDom,{
+					'name'          : data[i].name,
+					'learnerCount'  : data[i].learnerCount,
+					'description'   : data[i].description,
+					'provider'      : data[i].provider,
+					'targetUser'    : data[i].targetUser,
+					'price'         : data[i].price,
+					'bigPhotoUrl'   : data[i].bigPhotoUrl
+				});	
 			}
-			cBox.appendChild(listObj);
-
+			
 			listObj = document.getElementById(prefix + '-page-' + pageNo);
-			Unit.addEvent(listObj,'mouseover',function(event){
-				var e = window.event || event;
-				var element = e.target;
-				while (element.tagName != 'LI'){
-					element = element.parentNode;
-				}
-				detailShow(element);
-			});		
-			// Unit.addEvent(listObj,'mouseout',function(){
-			// 	console.log('da');
-			// 	detailHide();
-			// });			
-
+			var liArr = listObj.querySelectorAll('li');
+			for (var i = 0; i < liArr.length; i++){
+				Unit.addEvent(liArr[i],'mouseenter',function(){
+					detailShow(this);
+				});					
+			}		
+			Unit.addEvent(listObj,'mouseleave',function(event){
+			　　if (event.relatedTarget == event.target){
+					detailHide();
+				}			
+			});	
 			//设置分页
 			setPagination();
 
@@ -455,18 +457,18 @@ function detailShow(element){
 	detailObj.innerHTML = '';
 	var divDom = document.createElement('div');
 	divDom.className = 'detail-content clearfix';
-	divDom.innerHTML = '<img src="'+ element.dataset.bigPhotoUrl +'">'
+	divDom.innerHTML = '<img src="'+ Unit.getData(element,'bigPhotoUrl') +'">'
 						+ '<div class="detail-info">'
-						+ '<h3>'+ element.dataset.name +'</h3>'
-						+ '<p><i class="icon icon-person"></i>'+ element.dataset.learnerCount +'人在学</p>'
-						+ '<p>发布者：'+ element.dataset.provider +'</p>'
-						+ '<p>目标人群：'+ element.dataset.targetUser +'</p>'
+						+ '<h3>'+ Unit.getData(element,'name') +'</h3>'
+						+ '<p><i class="icon icon-person"></i>'+ Unit.getData(element,'learnerCount') +'人在学</p>'
+						+ '<p>发布者：'+ Unit.getData(element,'provider') +'</p>'
+						+ '<p>目标人群：'+ Unit.getData(element,'targetUser') +'</p>'
 						+ '</div>';
 	detailObj.appendChild(divDom);
 	
 	divDom = document.createElement('div');
 	divDom.className = 'detail-footer';
-	divDom.innerHTML = '<p>'+ element.dataset.description +'</p>';
+	divDom.innerHTML = '<p>'+ Unit.getData(element,'description') + '</p>';
 	detailObj.appendChild(divDom);
 	detailObj.style.left = element.offsetLeft + 'px';
 	detailObj.style.top = element.offsetTop + 'px';
@@ -477,4 +479,3 @@ function detailHide(){
 	var detailObj = document.getElementById('course-detail');
 	detailObj.style.display = 'none';
 }
-
